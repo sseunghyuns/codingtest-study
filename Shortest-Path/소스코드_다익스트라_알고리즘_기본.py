@@ -73,7 +73,6 @@ def dijkstra(start):
             if cost < distance[j[0]]:
                 distance[j[0]] = cost
 
-
 dijkstra(start)
 
 # 모든 노드로 가기 위한 최단 거리를 출력
