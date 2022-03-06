@@ -18,12 +18,13 @@ for _ in range(t):
     
     x, y = 0, 0
     # 시작점 0,0으로 초기화 및 큐 삽입
-    que = [(graph[x][y], x,y)]
+    que = [(graph[x][y], x, y)]
     distance[x][y] = graph[x][y]
     while que:
         # 최단 거리가 짧은 노드에 대한 정보 꺼내기
         dist, x, y = heapq.heappop(que)
-        if distance[x][y] < dist:
+        if distance[x][y] < dist: # 이미 처리된 경우 건너뛰기
+            print(f"Jump! :{distance[x][y]}, {dist}")
             continue
         
         for i in range(4):
