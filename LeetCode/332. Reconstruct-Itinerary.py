@@ -9,7 +9,7 @@ class Solution:
         graph = defaultdict(list)
         for a, b in sorted(tickets):
             graph[a].append(b)
-
+        
         result = []
         print(graph)
         def dfs(a):
