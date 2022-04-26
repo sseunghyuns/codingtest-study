@@ -28,3 +28,24 @@ while start < end:
         start +=1
 print(count)
     
+
+
+'''
+while문을 이용한 풀이
+'''
+
+count=0
+start = 0
+end = n-1
+
+while start < end:
+    sum_ = array[start] + array[end]
+    if sum_ < x:
+        start+=1
+    elif sum_ > x:
+        end-=1
+    else:
+        count+=1
+        start+=1
+
+print(count)
