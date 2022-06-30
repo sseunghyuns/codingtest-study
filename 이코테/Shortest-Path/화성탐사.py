@@ -24,7 +24,7 @@ for _ in range(t):
         # 최단 거리가 짧은 노드에 대한 정보 꺼내기
         dist, x, y = heapq.heappop(que)
         if distance[x][y] < dist: # 이미 처리된 경우 건너뛰기
-            print(f"Jump! :{distance[x][y]}, {dist}")
+            print(f"Jump! :{distance[x][y]}, {dist}") # 처리된 경우는 무조건 현재 위치에서의 비용보다 작을 수밖에 없다.(비용은 0~9값을 갖기 때문)
             continue
         
         for i in range(4):
