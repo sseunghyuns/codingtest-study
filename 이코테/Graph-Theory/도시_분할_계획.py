@@ -1,4 +1,5 @@
-import heapq
+import sys
+input = sys.stdin.readline
 
 def find_parent(parent, x):
     if parent[x]!=x:
@@ -14,19 +15,19 @@ def union_parent(parent, a, b):
         parent[a]=b
 
 N, M = map(int, input().split())
-
 parent = [i for i in range(N+1)]
 edges = []
 
 for _ in range(M):
     a, b, c = map(int, input().split())
-    heapq.heappush(edges, (c, a, b))
+    edges.append((c, a, b))
+edges.sort()
 
 result = 0 # 전체 비용
 max_cost = 0 # edge 중 최대 비용
 
-for i in range(M): 
-    c, a, b = heapq.heappop(edges)
+for edge in edges:
+    c, a, b = edge
     if find_parent(parent, a) != find_parent(parent, b):
         union_parent(parent, a, b)
         result+=c
